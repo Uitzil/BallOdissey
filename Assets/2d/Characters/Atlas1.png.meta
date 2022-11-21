@@ -3,7 +3,7 @@ guid: e9e67933e9f3b284c9469d40111d533f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,7 +20,6 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -64,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -118,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atlas1_0
+      name: Idle_00
       rect:
         serializedVersion: 2
         x: 83
@@ -126,7 +125,7 @@ TextureImporter:
         width: 237
         height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +133,237 @@ TextureImporter:
       bones: []
       spriteID: d681604eee08d594e89f5cd0909a9776
       internalID: -348941384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_01
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 2964
+        width: 296
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b046dd546d97e14ba1f263b7e2824b7
+      internalID: 1188755285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_02
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 2966
+        width: 287
+        height: 639
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c47ff24e76bca41a6bf91e893c7233
+      internalID: 1124264664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_03
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 3337
+        width: 174
+        height: 306
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91dda3673b6bdc43ad7dfa20112d646
+      internalID: 1786059734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_04
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 3324
+        width: 230
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37bb526d8b56094996317b8b531e74b
+      internalID: 1893048889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_05
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 3491
+        width: 211
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb75a89ddec7444b9c95fe38aeb7d42
+      internalID: -252064894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_06
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 3469
+        width: 217
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8feb8bee6e30eb942b09704232cf5376
+      internalID: -18444057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_07
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 3119
+        width: 174
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6d435b2e721564687ae26f23223818
+      internalID: -234413718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_08
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 2967
+        width: 552
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd0ab3735622f1468f3951b97d59ed8
+      internalID: 1907976872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpUp_09
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 2976
+        width: 220
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1127c373af40a3c438aa42a9cfb67492
+      internalID: -1599370780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_01
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 2709
+        width: 227
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b876d1221ab514b875109a7adfe4e7
+      internalID: 302282121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_02
+      rect:
+        serializedVersion: 2
+        x: 3283
+        y: 2710
+        width: 255
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afab8f1265d3a442a88025dc0f74b63
+      internalID: -144729570
       vertices: []
       indices: 
       edges: []
@@ -149,9 +379,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atlas1_0: -348941384
+      JumpUp_06: -18444057
+      JumpUp_09: -1599370780
+      Idle_00: -348941384
+      JumpUp_04: 1893048889
+      JumpUp_07: -234413718
+      JumpUp_03: 1786059734
+      JumpUp_08: 1907976872
+      Run_02: -144729570
+      Run_01: 302282121
+      JumpUp_05: -252064894
+      JumpUp_02: 1124264664
+      JumpUp_01: 1188755285
   spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

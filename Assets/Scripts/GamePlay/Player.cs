@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private Vector3 speed = Vector3.zero;
 
 
+
+
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask isFloor;
 
@@ -25,6 +27,13 @@ public class Player : MonoBehaviour
 
     private bool jump = false;
 
+
+
+    private Animator animator;
+
+
+
+    [SerializeField] private float Lifes = 3f;
 
 
     SpriteRenderer sp;
@@ -43,6 +52,9 @@ public class Player : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
+
+        animator = GetComponent<Animator>();
+
     }
 
 
@@ -53,26 +65,25 @@ public class Player : MonoBehaviour
 
     }
 
-    void SpawnBall()
-    {
-        transform.position = spawnPoint.transform.position;
-    }
+
 
 
 
 
     void Update()
     {
+        moveH = Input.GetAxis("Horizontal") * moveSpeed ;
+        FlipPlayer();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
 
-            // 
+            
 
         }
+        animator.SetFloat("Horizontal", Mathf.Abs(moveH));
 
-        moveH = Input.GetAxis("Horizontal") * moveSpeed * 1000;
-        FlipPlayer();
     }
 
     private void FixedUpdate()
@@ -89,7 +100,7 @@ public class Player : MonoBehaviour
 
 
 
-        Move(moveH * Time.fixedDeltaTime, jump);
+        Move(moveH * Time.fixedDeltaTime*1000, jump);
         jump = false;
 
 
@@ -128,14 +139,20 @@ public class Player : MonoBehaviour
 
 
     }
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
 
 
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        if(collision.gameObject.tag == "FallDie")
+        {
+            SpawnBall();
+
+        }
         if (collision.gameObject.tag == "Floor")
         {
             onFloor = true;
@@ -171,11 +188,22 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void OnDrawGizmos()
+   /* private void OnDrawGizmos()
     {
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(FloorController.position, BoxDimension);
 
+    }*/
+    void SpawnBall()
+    {
+        transform.position = spawnPoint.transform.position;
+        Lifes -= 1;
+
+        if (Lifes>= 0f)
+        {
+                
+
+        }
     }
 }
