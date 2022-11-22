@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody rb;
 
-
+    //Variables de movimiento
     private float moveH;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveSmooth;
@@ -17,10 +17,13 @@ public class Player : MonoBehaviour
 
 
 
-
+    //Variables de salto
     [SerializeField] private float jumpForce;
+    private float moveV;
     [SerializeField] private LayerMask isFloor;
 
+
+    //Variables para bool tocar el suelo
     [SerializeField] private Transform FloorController;
     [SerializeField] private Vector3 BoxDimension;
     [SerializeField] private bool onFloor;
@@ -28,18 +31,18 @@ public class Player : MonoBehaviour
     private bool jump = false;
 
 
-
+    //variable del animador
     private Animator animator;
 
 
-
+    //Variable para vidas
     [SerializeField] private float Lifes = 3f;
 
-
+//Variables para dar la vuelta al personaje
     SpriteRenderer sp;
     private bool RLook = true;
 
-    //public float speed;
+    //spawnpoint
     public Transform spawnPoint;
 
     void Awake()
@@ -71,10 +74,11 @@ public class Player : MonoBehaviour
 
 
     void Update()
-    {
+    {//encuentra el input de la tecla horizontal y lo multiplica por velocidad modificable + aplica el metodo de girar personaje
+
         moveH = Input.GetAxis("Horizontal") * moveSpeed ;
         FlipPlayer();
-
+        //encuentra el input de la tecla espacio y hacer true el bool de jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
@@ -82,6 +86,7 @@ public class Player : MonoBehaviour
             
 
         }
+        //hace el parametro del animador igual a la velocidad de movimiento (para animaciones del personaje)
         animator.SetFloat("Horizontal", Mathf.Abs(moveH));
 
     }
@@ -90,16 +95,13 @@ public class Player : MonoBehaviour
     {
 
 
-        //float xvelocity = moveH * speed;
-
-
-        //rb.velocity = new Vector3(xvelocity, rb.velocity.y, rb.velocity.z);
+    
        
 
         
 
-
-
+        
+        //Activa el metodo con y añade los valores de mover a la velocidad del framerate*1000, y el booleano de jump que es falso
         Move(moveH * Time.fixedDeltaTime*1000, jump);
         jump = false;
 
@@ -112,57 +114,57 @@ public class Player : MonoBehaviour
 
 
     private void Move(float move, bool Jump)
-    {
+    {//crea una velocidad que deseas y luego hace que sea el maximo de velocidad alcanzada por el personaje
         Vector3 speedTarget = new Vector3(move, rb.velocity.y, rb.velocity.z);
 
         rb.velocity = Vector3.SmoothDamp(rb.velocity, speedTarget, ref speed, moveSmooth);
 
 
 
+        //si el booleano del suelo es verdadero, y el de brincar tambien, entonces el suelo se hace falso, y se añade fuerza vertical para que brinque (y el error de la animacion aun ocurre)
 
         if (onFloor && Jump)
         {
             onFloor = false;
             rb.AddForce(new Vector3(0f, jumpForce * 400));
 
-        }
-        /*if(move<0 && !RLook)
-        {
-            FlipPlayer();
-        }
-        else if (move>0 && RLook)
-        {
-            
 
-        }*/
+
+            moveV = rb.velocity.y;
+
+            
+            animator.SetFloat("Vertical", moveV);
+        }
+   
 
 
 
     }
-    /*private void OnMouseDown()
-    {
-
-
-    }*/
-
+  
     private void OnCollisionEnter(Collision collision)
     {
-
+        //Cuando entra en collision con el objecto de caida, se activa el metodo de respawn
         if(collision.gameObject.tag == "FallDie")
         {
             SpawnBall();
 
         }
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor") //si hace contacto con el tag de suelo, el suelo es verdadero,y tambien el parametro
         {
+
+            
             onFloor = true;
-            //Physics2D.OverlapBox(FloorController.position, BoxDimension, 0f, isFloor);
+            animator.SetBool("OnFloor", onFloor);
+           
 
         }
-        else if(collision.gameObject.tag != "Floor") { onFloor = false; }
+        else if(collision.gameObject.tag != "Floor") //si no lo esta tocando entonces el suelo es falso
+        { 
+            onFloor = false;
+        }
 
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy") //si toca un objeto llamado asi, se destruye
         {
             Destroy(collision.gameObject);
 
@@ -172,10 +174,7 @@ public class Player : MonoBehaviour
     void FlipPlayer()
     {
 
-        /*RLook = !RLook;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;*/
+ //si va en direcion izquierda se activa el flip 
 
 
         if (rb.velocity.x < -0.1f)
@@ -188,15 +187,9 @@ public class Player : MonoBehaviour
         }
 
     }
-   /* private void OnDrawGizmos()
-    {
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(FloorController.position, BoxDimension);
-
-    }*/
+ 
     void SpawnBall()
-    {
+    {//si se activa el personaje regresa al spawn point y se le resta una vida
         transform.position = spawnPoint.transform.position;
         Lifes -= 1;
 
