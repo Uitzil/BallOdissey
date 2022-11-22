@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     //Variables para bool tocar el suelo
     [SerializeField] private Transform FloorController;
     [SerializeField] private Vector3 BoxDimension;
-    [SerializeField] private bool onFloor;
+     private bool onFloor;
 
     private bool jump = false;
 
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
 
     //Variable para vidas
     [SerializeField] private float Lifes = 3f;
+    private bool onDie;
 
 //Variables para dar la vuelta al personaje
     SpriteRenderer sp;
@@ -88,7 +89,14 @@ public class Player : MonoBehaviour
         }
         //hace el parametro del animador igual a la velocidad de movimiento (para animaciones del personaje)
         animator.SetFloat("Horizontal", Mathf.Abs(moveH));
+        moveV = rb.velocity.y;
 
+
+        animator.SetFloat("Vertical", moveV);
+
+        animator.SetBool("OnFloor", onFloor);
+        
+        animator.SetBool("OnDie", onDie);
     }
 
     private void FixedUpdate()
@@ -125,15 +133,12 @@ public class Player : MonoBehaviour
 
         if (onFloor && Jump)
         {
-            onFloor = false;
-            rb.AddForce(new Vector3(0f, jumpForce * 400));
-
-
-
-            moveV = rb.velocity.y;
-
             
-            animator.SetFloat("Vertical", moveV);
+            rb.AddForce(new Vector3(0f, jumpForce * 400));
+            //yield return new WaitForSeconds(0.1f);
+            onFloor = false;
+
+
         }
    
 
@@ -141,6 +146,7 @@ public class Player : MonoBehaviour
 
     }
   
+    
     private void OnCollisionEnter(Collision collision)
     {
         //Cuando entra en collision con el objecto de caida, se activa el metodo de respawn
@@ -154,11 +160,11 @@ public class Player : MonoBehaviour
 
             
             onFloor = true;
-            animator.SetBool("OnFloor", onFloor);
+            
            
 
         }
-        else if(collision.gameObject.tag != "Floor") //si no lo esta tocando entonces el suelo es falso
+        else 
         { 
             onFloor = false;
         }
@@ -190,9 +196,12 @@ public class Player : MonoBehaviour
  
     void SpawnBall()
     {//si se activa el personaje regresa al spawn point y se le resta una vida
+        onDie = true;
+        
+        
         transform.position = spawnPoint.transform.position;
         Lifes -= 1;
-
+        onDie = false;
         if (Lifes>= 0f)
         {
                 

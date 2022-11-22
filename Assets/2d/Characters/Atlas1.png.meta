@@ -20,6 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -335,7 +337,7 @@ TextureImporter:
         width: 227
         height: 172
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,7 +358,7 @@ TextureImporter:
         width: 255
         height: 172
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,6 +366,384 @@ TextureImporter:
       bones: []
       spriteID: 2afab8f1265d3a442a88025dc0f74b63
       internalID: -144729570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_01
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 2268
+        width: 252
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d4ddf2253930d40b3404fb6a6ce935
+      internalID: 1067103188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_02
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 2271
+        width: 474
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08ad76ed65333945bb72baf6a0409ee
+      internalID: 944680171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_03
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 2627
+        width: 303
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da7ef3c8010043478a5ab3bd83f3c09
+      internalID: -646373484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_04
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 2683
+        width: 340
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e9f7ebb8b31c4428e6f718bad2f3e8
+      internalID: -964541234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_05
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 2679
+        width: 328
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2b852b73a780a4e8f1fdb4ac8bc4fc
+      internalID: -95161751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_06
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 2403
+        width: 488
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d60e9225c8a2f441b05a136601d3da9
+      internalID: -1700054774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_07
+      rect:
+        serializedVersion: 2
+        x: 2729
+        y: 2271
+        width: 384
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f3881f2b2c4504292338f49fa77ac1
+      internalID: -1979860926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSide_08
+      rect:
+        serializedVersion: 2
+        x: 3217
+        y: 2267
+        width: 240
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c062dfd34e12b4f879b03a686fa45d
+      internalID: -2138377302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_01
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1111
+        width: 261
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700881505c8dd724ba1f723dd9250279
+      internalID: -1305278380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_02
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1111
+        width: 343
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fea31f43c850be42a2fd6e2c3254cf1
+      internalID: 138211365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_03
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 1113
+        width: 535
+        height: 259
+      alignment: 9
+      pivot: {x: 0.58071464, y: 0.5391034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94288bcaaee1b2b40bd2d80b4e21b691
+      internalID: 167716451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_04
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 1113
+        width: 496
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3a43538b292d2d4692311d42dad1854
+      internalID: -202022943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_05
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 1113
+        width: 102
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1258cdbb8812a4184ddccf1fa24540
+      internalID: 116039853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_06
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 1116
+        width: 102
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758c8bc2a71e054498c0aa0420a3385a
+      internalID: 152608582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_07
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1113
+        width: 102
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5612f9ab506e7734c98dc1e54a8b26b4
+      internalID: -1375132788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_08
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 1104
+        width: 102
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854f6c61226ba4a47a44b4e2b5391385
+      internalID: -849165206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_09
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 1109
+        width: 183
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b77a934e7440d44eb684d27624682a6
+      internalID: -415365066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_10
+      rect:
+        serializedVersion: 2
+        x: 2761
+        y: 1112
+        width: 183
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42c253485aecfe4b9ea988402531b4c
+      internalID: -1463559485
       vertices: []
       indices: 
       edges: []
@@ -380,20 +760,37 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       JumpUp_06: -18444057
+      Death_08: -849165206
       JumpUp_09: -1599370780
       Idle_00: -348941384
+      Death_10: -1463559485
+      JumpSide_06: -1700054774
+      Death_02: 138211365
       JumpUp_04: 1893048889
+      Death_03: 167716451
+      JumpSide_05: -95161751
+      JumpSide_03: -646373484
+      JumpSide_08: -2138377302
+      JumpSide_04: -964541234
+      Death_05: 116039853
+      Death_09: -415365066
       JumpUp_07: -234413718
+      JumpSide_01: 1067103188
       JumpUp_03: 1786059734
       JumpUp_08: 1907976872
+      Death_01: -1305278380
+      JumpSide_02: 944680171
+      JumpSide_07: -1979860926
+      Death_07: -1375132788
       Run_02: -144729570
       Run_01: 302282121
       JumpUp_05: -252064894
       JumpUp_02: 1124264664
+      Death_04: -202022943
+      Death_06: 152608582
       JumpUp_01: 1188755285
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
