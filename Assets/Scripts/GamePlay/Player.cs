@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     //Variables de salto
     [SerializeField] private float jumpForce;
+    [SerializeField] private float timeTodie = 1.7f;
     private float moveV;
     [SerializeField] private LayerMask isFloor;
 
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
 
     void OnEnable()
     {
-        GameController.ReSpawn += SpawnBall;
+        GameController.ReSpawn += KillPlayer;
 
     }
 
@@ -76,6 +77,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {//encuentra el input de la tecla horizontal y lo multiplica por velocidad modificable + aplica el metodo de girar personaje
+        if (onDie) 
+            return;
 
         moveH = Input.GetAxis("Horizontal") * moveSpeed ;
         FlipPlayer();
@@ -96,7 +99,7 @@ public class Player : MonoBehaviour
 
         animator.SetBool("OnFloor", onFloor);
         
-        animator.SetBool("OnDie", onDie);
+        
     }
 
     private void FixedUpdate()
@@ -152,7 +155,7 @@ public class Player : MonoBehaviour
         //Cuando entra en collision con el objecto de caida, se activa el metodo de respawn
         if(collision.gameObject.tag == "FallDie")
         {
-            SpawnBall();
+            KillPlayer();
 
         }
         if (collision.gameObject.tag == "Floor") //si hace contacto con el tag de suelo, el suelo es verdadero,y tambien el parametro
@@ -193,19 +196,29 @@ public class Player : MonoBehaviour
         }
 
     }
- 
-    void SpawnBall()
-    {//si se activa el personaje regresa al spawn point y se le resta una vida
+    private void KillPlayer() {
+
+        if (onDie) return;
+
         onDie = true;
+        animator.SetBool("OnDie", onDie);
+        if (Lifes > 0f)
+        {
+            StartCoroutine(SpawnBall());
+        }
+        else 
+        {
+            //gameover
+        }
         
-        
+    }
+ 
+    IEnumerator SpawnBall()
+    {//si se activa el personaje regresa al spawn point y se le resta una vida
+        yield return new WaitForSeconds(timeTodie);
         transform.position = spawnPoint.transform.position;
         Lifes -= 1;
         onDie = false;
-        if (Lifes>= 0f)
-        {
-                
-
-        }
+        animator.SetBool("OnDie", onDie);
     }
 }

@@ -332,7 +332,7 @@ TextureImporter:
       name: Run_01
       rect:
         serializedVersion: 2
-        x: 3049
+        x: 3048
         y: 2709
         width: 227
         height: 172
@@ -547,7 +547,7 @@ TextureImporter:
         width: 261
         height: 183
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -568,7 +568,7 @@ TextureImporter:
         width: 343
         height: 236
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,8 +588,8 @@ TextureImporter:
         y: 1113
         width: 535
         height: 259
-      alignment: 9
-      pivot: {x: 0.58071464, y: 0.5391034}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
