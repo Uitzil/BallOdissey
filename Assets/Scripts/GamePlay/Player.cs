@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
     //Variables para bool tocar el suelo
     [SerializeField] private Transform FloorController;
     [SerializeField] private Vector3 BoxDimension;
-     private bool onFloor;
+     private bool onFloor=false;
+    private bool withBox=false;
 
     private bool jump = false;
 
@@ -95,11 +96,14 @@ public class Player : MonoBehaviour
         moveV = rb.velocity.y;
 
 
+
         animator.SetFloat("Vertical", moveV);
 
         animator.SetBool("OnFloor", onFloor);
-        
-        
+
+        animator.SetBool("WithBox", withBox);
+
+
     }
 
     private void FixedUpdate()
@@ -134,12 +138,12 @@ public class Player : MonoBehaviour
 
         //si el booleano del suelo es verdadero, y el de brincar tambien, entonces el suelo se hace falso, y se añade fuerza vertical para que brinque (y el error de la animacion aun ocurre)
 
-        if (onFloor && Jump)
+        if (onFloor && Jump || withBox && Jump)
         {
             
             rb.AddForce(new Vector3(0f, jumpForce * 400));
             //yield return new WaitForSeconds(0.1f);
-            onFloor = false;
+           
 
 
         }
@@ -171,14 +175,36 @@ public class Player : MonoBehaviour
         { 
             onFloor = false;
         }
-
-
-        if (collision.gameObject.tag == "Enemy") //si toca un objeto llamado asi, se destruye
+        if (collision.gameObject.tag == "Box")
         {
-            Destroy(collision.gameObject);
+            withBox = true;
 
         }
 
+            if (collision.gameObject.tag == "Paletas") //si toca un objeto con tag paleta, se destruyen las paletas y se suma una vida
+        
+        {
+            Destroy(collision.gameObject);
+            Lifes += 1;
+        }
+
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Box")
+        {
+            withBox = false;
+
+        }
+        if (collision.gameObject.tag == "Floor") 
+        {
+
+
+            onFloor = false;
+
+
+
+        }
     }
     void FlipPlayer()
     {

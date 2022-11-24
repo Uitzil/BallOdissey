@@ -748,6 +748,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Push_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1425
+        width: 235
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9103c03639fb96469ca92498f6aa626
+      internalID: -1437886605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Push_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1425
+        width: 229
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f56a6fd94280d4abf599a86f765862
+      internalID: 307515925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Push_03
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1422
+        width: 229
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f771a6858757e4f44abd229ac4145e19
+      internalID: -1238643229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Push_04
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1422
+        width: 229
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c9a0a6236139f428352936d0755e96
+      internalID: 43036384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Push_05
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 1422
+        width: 229
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7b1ac2f1acd534faf5b0b9ca98d223
+      internalID: 38233138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Push_06
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 1423
+        width: 229
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec5341dbc3be5f498617840bfec7276
+      internalID: 1834105270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -762,17 +888,23 @@ TextureImporter:
       JumpUp_06: -18444057
       Death_08: -849165206
       JumpUp_09: -1599370780
+      Push_04: 43036384
       Idle_00: -348941384
+      Push_06: 1834105270
       Death_10: -1463559485
       JumpSide_06: -1700054774
       Death_02: 138211365
       JumpUp_04: 1893048889
       Death_03: 167716451
       JumpSide_05: -95161751
+      Push_05: 38233138
       JumpSide_03: -646373484
+      Push_02: 307515925
       JumpSide_08: -2138377302
       JumpSide_04: -964541234
       Death_05: 116039853
+      Push_01: -1437886605
+      Push_03: -1238643229
       Death_09: -415365066
       JumpUp_07: -234413718
       JumpSide_01: 1067103188
