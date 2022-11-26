@@ -31,8 +31,6 @@ public class Turret : MonoBehaviour
         float turretRotationStep = turretRotationSpeed * Time.deltaTime;
 
         Vector3 newLookDirection = Vector3.RotateTowards(transform.forward, playerDirection, turretRotationStep, 0f);
-
         transform.rotation = Quaternion.LookRotation(newLookDirection);
-
     }
 }

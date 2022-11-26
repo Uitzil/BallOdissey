@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
 //Variables para dar la vuelta al personaje
     SpriteRenderer sp;
-    private bool RLook = true;
+  
 
     //spawnpoint
     public Transform spawnPoint;
@@ -66,8 +66,8 @@ public class Player : MonoBehaviour
 
 
     void OnEnable()
-    {
-        GameController.ReSpawn += KillPlayer;
+    { //suscripcion del metodo de killplayer a el evento de respawn
+      GameController.ReSpawn += KillPlayer;
 
     }
 
@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
        
 
         
-
+       
         
         //Activa el metodo con y añade los valores de mover a la velocidad del framerate*1000, y el booleano de jump que es falso
         Move(moveH * Time.fixedDeltaTime*1000, jump);
@@ -142,7 +142,6 @@ public class Player : MonoBehaviour
         {
             
             rb.AddForce(new Vector3(0f, jumpForce * 400));
-            //yield return new WaitForSeconds(0.1f);
            
 
 
@@ -156,7 +155,7 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        //Cuando entra en collision con el objecto de caida, se activa el metodo de respawn
+        //Cuando entra en collision con el objecto de caida, se activa el metodo de killplayer
         if(collision.gameObject.tag == "FallDie")
         {
             KillPlayer();
@@ -169,13 +168,11 @@ public class Player : MonoBehaviour
             onFloor = true;
             
            
-
+            
         }
-        else 
-        { 
-            onFloor = false;
-        }
-        if (collision.gameObject.tag == "Box")
+        
+      
+        if (collision.gameObject.tag == "Box") // si entra en contacto con un objeto de tag box entonces el bool de withbox es cierto y tambien el paramentro
         {
             withBox = true;
 
@@ -189,7 +186,7 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision) //cuando deja e tocar alguno de esos objetos su bool es falso
     {
         if (collision.gameObject.tag == "Box")
         {
@@ -222,7 +219,7 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void KillPlayer() {
+    private void KillPlayer() { //cuando se activa el bool de morir es positivo y se informa el parametro, si tienes mas de 0 vidas se activa el respawn y si no gameover
 
         if (onDie) return;
 
@@ -240,7 +237,7 @@ public class Player : MonoBehaviour
     }
  
     IEnumerator SpawnBall()
-    {//si se activa el personaje regresa al spawn point y se le resta una vida
+    {//si se activa se toma unos segundos para el respawn, luego el personaje regresa al spawn point y se le resta una vida, Y el on die se vuelve falso 
         yield return new WaitForSeconds(timeTodie);
         transform.position = spawnPoint.transform.position;
         Lifes -= 1;

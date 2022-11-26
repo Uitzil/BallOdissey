@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     
     private Vector3 cameraoffset;
     public Transform targetObject;
-    
+    public float smoothFactor = 0.5f;
 
    
 
@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+
         cameraoffset = transform.position - targetObject.transform.position;
 
     }
@@ -43,7 +44,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate() {
 
-        
+        transform.position= Vector3.Slerp(transform.position,targetObject.transform.position,smoothFactor);
         Vector3 newPosition = targetObject.transform.position + cameraoffset;
 
         transform.position = newPosition;
