@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-
+        Player.GameOver += gameOverMetod;
     }
 
    void Update()
@@ -28,7 +29,13 @@ public class GameController : MonoBehaviour
 
         } 
     }
+    public void gameOverMetod()
+    {
 
-  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    }
+
+
 }
     

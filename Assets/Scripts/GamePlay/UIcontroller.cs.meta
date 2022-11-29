@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c1026dca3fca45d4aa34ef00d8fb2850
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - lifeCount: {instanceID: 0}
+  - sixLife: {fileID: -6142125, guid: 5944a9bd3d04944428e7991cd5eb9cbf, type: 3}
+  - fiveLife: {fileID: 112902416, guid: 5944a9bd3d04944428e7991cd5eb9cbf, type: 3}
+  - fourLife: {fileID: 1479623347, guid: 5944a9bd3d04944428e7991cd5eb9cbf, type: 3}
+  - threeLife: {fileID: -1086033459, guid: 5944a9bd3d04944428e7991cd5eb9cbf, type: 3}
+  - twoLife: {fileID: -1132002783, guid: 5944a9bd3d04944428e7991cd5eb9cbf, type: 3}
+  - oneLife: {fileID: 1835219813, guid: 5944a9bd3d04944428e7991cd5eb9cbf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

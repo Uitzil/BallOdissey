@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
 
     //Variable para vidas
-    [SerializeField] private float Lifes = 3f;
+    public float Lifes = 6f;
     private bool onDie;
 
 //Variables para dar la vuelta al personaje
@@ -47,6 +47,14 @@ public class Player : MonoBehaviour
 
     //spawnpoint
     public Transform spawnPoint;
+
+
+    //EVENTOS
+    public delegate void dieAction();
+    public static event dieAction DiePlayer;
+
+    public delegate void overAction();
+    public static event overAction GameOver;
 
     void Awake()
     {
@@ -68,6 +76,7 @@ public class Player : MonoBehaviour
     void OnEnable()
     { //suscripcion del metodo de killplayer a el evento de respawn
       GameController.ReSpawn += KillPlayer;
+        
 
     }
 
@@ -228,10 +237,14 @@ public class Player : MonoBehaviour
         if (Lifes > 0f)
         {
             StartCoroutine(SpawnBall());
-        }
-        else 
+           
+                if (DiePlayer != null)
+                    DiePlayer();
+            }
+        if (Lifes ==0) 
         {
-            //gameover
+            if (GameOver != null)
+                GameOver();
         }
         
     }
