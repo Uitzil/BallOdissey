@@ -237,8 +237,8 @@ public class Player : MonoBehaviour
         if (Lifes > 0f)
         {
             StartCoroutine(SpawnBall());
-           
-                if (DiePlayer != null)
+            Lifes -= 1;
+            if (DiePlayer != null)
                     DiePlayer();
             }
         if (Lifes ==0) 
@@ -253,7 +253,7 @@ public class Player : MonoBehaviour
     {//si se activa se toma unos segundos para el respawn, luego el personaje regresa al spawn point y se le resta una vida, Y el on die se vuelve falso 
         yield return new WaitForSeconds(timeTodie);
         transform.position = spawnPoint.transform.position;
-        Lifes -= 1;
+      
         onDie = false;
         animator.SetBool("OnDie", onDie);
     }

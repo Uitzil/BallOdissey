@@ -5,58 +5,59 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class LaserShooter : MonoBehaviour
 {
-    public Camera playerCamera;
-    public Transform laserOrigin;
-    public float gunRange = 50f;
-   
-    public float laserDuration = 0.05f;
 
-    public float waitDuration = 5f;
-
-    LineRenderer laserLine;
-
+    public GameObject laserShooter;
     private Transform player;
-    void Awake()
-    {
-        laserLine = GetComponent<LineRenderer>();
+    public float turretRange;
+    public float waitTime=5f;
 
+    private LineRenderer lr;
+
+    void Start()
+    {
         player = FindObjectOfType<Player>().transform;
+        lr = GetComponent<LineRenderer>();
     }
 
-    void Update()
+    private void Update()
     {
         Vector3 playerPos = new Vector3(player.position.x, player.position.y, player.position.z);
 
+        if (Vector3.Distance(transform.position, playerPos) > turretRange) {
 
-        if (Vector3.Distance(transform.position, playerPos) > gunRange)
-        { 
-
-
-            laserLine.SetPosition(0, laserOrigin.position);
-            Vector3 rayOrigin = new Vector3(0, 0, 0);
-            //playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
-
-
-            RaycastHit hit;
-            if (Physics.Raycast(rayOrigin, transform.forward, out hit, gunRange))
-            {
-                laserLine.SetPosition(1, hit.point);
-                
-            }
-            else
-            {
-                laserLine.SetPosition(1, rayOrigin + (transform.forward * gunRange));
-            }
-            StartCoroutine(ShootLaser());
+          StartCoroutine  (Shoot());
         }
     }
 
-    IEnumerator ShootLaser()
+    IEnumerator Shoot()
     {
-        
-        laserLine.enabled = true;
-        yield return new WaitForSeconds(laserDuration);
-        laserLine.enabled = false;
+        yield return new WaitForSeconds(waitTime);
+
+
+        RaycastHit hit;
+        //Debug.Log("playerdetected");
+
+
+        if(Physics.Raycast(laserShooter.transform.position,laserShooter.transform.up,out hit))
+        {
+            
+            if (hit.collider)
+            {
+                Debug.Log("shotting");
+
+                lr.SetPosition(1, new Vector3(0, 0, hit.distance));
+
+                 if (hit.collider.tag == "Player")
+                 {
+
+                     Debug.Log("die");
+                 }
+            }
+            else
+            {
+                lr.SetPosition(1, new Vector3(0, 0, 5000));
+            }
+        }
 
     }
 }

@@ -24,6 +24,9 @@ public class UIcontroller : MonoBehaviour
 
     public void ChangeLives()
     {
+        
+        playerLives = FindObjectOfType<Player>().Lifes;
+        
         if (playerLives == 6)
         {
             lifeCount.sprite = sixLife;
