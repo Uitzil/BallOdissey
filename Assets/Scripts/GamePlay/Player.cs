@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     void OnEnable()
     { //suscripcion del metodo de killplayer a el evento de respawn
       GameController.ReSpawn += KillPlayer;
-        
+        LaserShooter.gotShot += KillPlayer;
 
     }
 
@@ -256,5 +256,6 @@ public class Player : MonoBehaviour
       
         onDie = false;
         animator.SetBool("OnDie", onDie);
+        //speed = 0f;
     }
 }

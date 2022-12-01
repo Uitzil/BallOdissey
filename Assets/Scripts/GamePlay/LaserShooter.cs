@@ -5,59 +5,99 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class LaserShooter : MonoBehaviour
 {
-
-    public GameObject laserShooter;
-    private Transform player;
-    public float turretRange;
-    public float waitTime=5f;
-
     private LineRenderer lr;
+    [SerializeField] private Transform laserOrigin;
+    public float waitTime;
+    public float shootTime;
+    public ParticleSystem sparks;
+    public float gunRange = 5f;
+    
 
-    void Start()
+    public delegate void shotAction();
+    public static event shotAction gotShot;
+    private Transform player;
+
+
+   
+      
+
+
+            private void Start()
     {
-        player = FindObjectOfType<Player>().transform;
         lr = GetComponent<LineRenderer>();
-    }
+        lr.enabled = false;
+
+         
+}
+
 
     private void Update()
     {
+        lr.SetPosition(0, laserOrigin.position);
+        player = FindObjectOfType<Player>().transform;
+
         Vector3 playerPos = new Vector3(player.position.x, player.position.y, player.position.z);
 
-        if (Vector3.Distance(transform.position, playerPos) > turretRange) {
 
-          StartCoroutine  (Shoot());
-        }
-    }
-
-    IEnumerator Shoot()
-    {
-        yield return new WaitForSeconds(waitTime);
-
-
-        RaycastHit hit;
-        //Debug.Log("playerdetected");
-
-
-        if(Physics.Raycast(laserShooter.transform.position,laserShooter.transform.up,out hit))
+        while (Vector3.Distance(transform.position, playerPos) > gunRange)
         {
-            
+            shoot();
+            // StartCoroutine(waitShoot());
+        }
+
+
+
+
+        /* if(fireCountDown>= 0f)
+         {
+             shoot();
+
+         }
+         fireCountDown -= Time.deltaTime;*/
+
+        //    StartCoroutine(waitShoot());
+        //}
+
+        //        IEnumerator waitShoot(){
+
+
+        //         yield return new WaitForSeconds(waitTime*Time.deltaTime);
+        //          lr.enabled = true;
+        //         shoot();
+
+        //        yield return new WaitForSeconds(shootTime*Time.deltaTime);
+
+        //}
+    }
+    private void shoot()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.up, out hit))
+        {
+
+
             if (hit.collider)
             {
-                Debug.Log("shotting");
+                sparks.Play();
+                sparks.transform.position = hit.transform.position;
+                lr.SetPosition(1, hit.point);
 
-                lr.SetPosition(1, new Vector3(0, 0, hit.distance));
+            }
+            if (hit.transform.CompareTag("Player"))
+            {
 
-                 if (hit.collider.tag == "Player")
-                 {
-
-                     Debug.Log("die");
-                 }
+                if (gotShot != null)
+                    gotShot();
             }
             else
             {
-                lr.SetPosition(1, new Vector3(0, 0, 5000));
+                lr.SetPosition(1, transform.up * 3000);
+                sparks.Stop();
             }
-        }
 
+
+        }
     }
-}
+    }
+

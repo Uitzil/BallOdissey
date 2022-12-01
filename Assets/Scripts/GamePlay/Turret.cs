@@ -9,6 +9,8 @@ public class Turret : MonoBehaviour
 
     private Transform player;
 
+    private float xRotation;
+    private float yRotation;
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class Turret : MonoBehaviour
         Vector3 playerPos = new Vector3(player.position.x, player.position.y, player.position.z);
 
 
-        if(Vector3.Distance(transform.position,playerPos)> turretRange) { return;  }
+        if (Vector3.Distance(transform.position, playerPos) > turretRange) { return; }
 
 
 
@@ -32,5 +34,15 @@ public class Turret : MonoBehaviour
 
         Vector3 newLookDirection = Vector3.RotateTowards(transform.forward, playerDirection, turretRotationStep, 0f);
         transform.rotation = Quaternion.LookRotation(newLookDirection);
+
+
+        ZClamp();
+    }
+    private void ZClamp()
+    {
+        yRotation = transform.eulerAngles.y;
+        xRotation = transform.eulerAngles.x;
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
+
     }
 }

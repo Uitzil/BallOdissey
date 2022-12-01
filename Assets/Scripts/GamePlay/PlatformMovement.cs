@@ -7,7 +7,7 @@ public class PlatformMovement : MonoBehaviour
 
     [SerializeField] private Transform FloorControl;
     [SerializeField] private float Distancia;
-    public float speed = -1;
+    public float speed = 1;
     //[SerializeField] bool turn;
 
     public bool moveRight;
@@ -25,7 +25,7 @@ public class PlatformMovement : MonoBehaviour
 
         if (!Physics.Raycast(FloorControl.position, Vector3.down, Distancia))
         {
-           // turn = false;
+          
             Turn();
         }
 
@@ -36,7 +36,7 @@ public class PlatformMovement : MonoBehaviour
     private void Turn()
     {
         moveRight = !moveRight;
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+        //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
         speed *= -1f;
 
     }
